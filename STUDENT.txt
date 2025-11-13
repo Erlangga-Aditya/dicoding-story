@@ -1,0 +1,2 @@
+APP_URL=https://erlangga-aditya.github.io/dicoding-story/
+MAP_SERVICE_API_KEY=

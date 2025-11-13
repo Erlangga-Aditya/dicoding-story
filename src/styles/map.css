@@ -1,0 +1,185 @@
+/* ========================================   MAP & CARD STYLES   ======================================== */
+
+/* General Map Container */
+.map-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.map-container, .map-container-small {
+    height: 400px;
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow var(--transition-normal);
+}
+
+.map-container-small {
+    height: 300px;
+    margin-top: var(--spacing-sm);
+}
+
+/* Leaflet Overrides (Map appearance) */
+/* Pastikan peta memiliki z-index yang baik */
+.leaflet-container {
+    background-color: var(--dark-bg-secondary);
+}
+
+/* Leaflet Popup Styling */
+.map-popup .popup-image {
+    max-width: 150px;
+    max-height: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 5px;
+}
+
+.map-popup h4 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: var(--accent-purple);
+}
+
+.map-popup p {
+    font-size: 0.8rem;
+    color: #444; /* Leaflet popup uses light background */
+}
+
+/* Story Card List (Home Page) */
+.stories-section {
+    margin-top: var(--spacing-xl);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    border-left: 4px solid var(--accent-pink);
+    padding-left: var(--spacing-sm);
+}
+
+.story-count {
+    font-size: 1rem;
+    background: var(--secondary-gradient);
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Story Card */
+.story-card {
+    background: var(--dark-bg-secondary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Highlighted Card (Sync Feature) */
+.story-card.highlight {
+    border: 3px solid var(--accent-pink);
+    box-shadow: 0 0 20px var(--accent-pink);
+    transform: scale(1.02);
+}
+
+.story-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.story-card:hover .story-image {
+    transform: scale(1.05);
+}
+
+.story-content {
+    padding: var(--spacing-md);
+}
+
+.story-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--accent-purple);
+}
+
+.story-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* TAMBAHKAN INI UNTUK MENGHILANGKAN PERINGATAN */
+    line-clamp: 3; 
+}
+.story-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-top: 1px dashed var(--dark-bg-tertiary);
+    padding-top: var(--spacing-sm);
+}
+
+/* Controls Section (Home) */
+.controls-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    background: var(--dark-bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.search-input {
+    width: 300px;
+    max-width: 100%;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--dark-bg-tertiary);
+    background: var(--dark-bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .controls-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-input {
+        width: 100%;
+    }
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+}
