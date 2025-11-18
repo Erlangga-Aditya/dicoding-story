@@ -1,0 +1,35 @@
+{
+  "name": "Dicoding Story",
+  "short_name": "Story",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "description": "Aplikasi berbagi cerita seputar Dicoding.",
+  "icons": [
+    { "src": "public/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "public/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "screenshots": [
+    {
+      "src": "public/images/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "label": "Beranda"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tambah Story",
+      "short_name": "Tambah",
+      "url": "#/add-story"
+    },
+    {
+      "name": "Beranda",
+      "short_name": "Home",
+      "url": "#/"
+    }
+  ]
+}
+
+
